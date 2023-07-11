@@ -36,3 +36,18 @@ export const SLogo = styled.img`
 export const SLink = styled.a`
   color: #61dafb;
 `
+
+
+export const TimerParts = styled.div`
+  max-width: 50px;
+  padding: 2rem;
+  background: #0b9d9d;
+  color: white;
+  border-radius: 15px;
+`
+
+export const TimerDivider = styled.span`
+  font-size: 32px;
+  margin: 1rem auto;
+  color: blue;
+`
