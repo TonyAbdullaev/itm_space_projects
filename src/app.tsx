@@ -1,12 +1,18 @@
 import React from 'react';
-import {Container} from "@mui/material";
 import TimerPage from "./pages/TimerPage";
+import {MainLayout} from "./assets/styles/app.styles";
+import CountdownPage from "./pages/CountdownPage";
+import P from "./pages/demopage";
+import TimerTitle from "./components/TimerTitle";
 
 function App() {
     return (
-        <Container maxWidth="md">
+        <MainLayout>
+            <TimerTitle title="Timer" />
             <TimerPage />
-        </Container>
+            {/*<CountdownPage />*/}
+            {/*<P/>*/}
+        </MainLayout>
     );
 }
 

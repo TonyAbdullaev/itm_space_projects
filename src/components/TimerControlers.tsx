@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button} from "@mui/material";
+import {TimerFooter} from "../assets/styles/app.styles";
 
 type TimerControllersProto = {
     start: any,
@@ -10,7 +11,7 @@ type TimerControllersProto = {
 
 const TimerControllers = ({start, pause, reset, status}: TimerControllersProto) => {
     return (
-        <footer style={{ maxWidth: "300px", display: 'flex', justifyContent: 'space-around' }}>
+        <TimerFooter>
             {status === 1 ? (
                 <Button variant='contained' color="secondary" onClick={pause}>
                     Pause
@@ -23,7 +24,7 @@ const TimerControllers = ({start, pause, reset, status}: TimerControllersProto) 
             <Button variant='contained' color="error" onClick={reset}>
                 Reset
             </Button>
-        </footer>
+        </TimerFooter>
     );
 };
 

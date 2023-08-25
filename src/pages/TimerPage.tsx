@@ -1,7 +1,7 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import Timer from "../components/Timer";
 import TimerControllers from "../components/TimerControlers";
-import {Stack} from "@mui/material";
+import TimerTitle from "../components/TimerTitle";
 
 const TimerPage = () => {
     const defaultTime = {ms: 0, s: 0, m:0, h: 0}
@@ -34,28 +34,27 @@ const TimerPage = () => {
         return setTime({ ...defaultTime, ms: updateMs, s: updateS, m: updateM, h: updateH });
     }
 
-    const startHandler = useCallback(() => {
+    const startHandler = () => {
         runTime();
         setInterv(window.setInterval( runTime, 10))
-    }, [])
+    }
 
-    const pauseHandler = useCallback(() => {
+    const pauseHandler = () => {
         clearInterval(interv)
         setStatus(2)
-    }, [status])
+    }
 
-    const resetHandler = useCallback(() => {
+    const resetHandler = () => {
         clearInterval(interv)
-        setTime(defaultTime)
+        setTime({ms: 0, s: 0, m:0, h: 0})
         setStatus(0)
-    }, [status])
+    }
 
     return (
-        <Stack spacing={2}>
-            <h2>Timer</h2>
+        <>
             <Timer time={time} />
             <TimerControllers start={startHandler} pause={pauseHandler} reset={resetHandler} status={status} />
-        </Stack>
+        </>
     );
 };
 

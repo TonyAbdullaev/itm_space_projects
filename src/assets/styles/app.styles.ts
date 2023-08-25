@@ -1,53 +1,63 @@
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 
-export const SApp = styled.div`
+export const MainLayout = styled.main`
+  margin: 0 auto;
+  height: 100vh;
   text-align: center;
+  max-width: 1120px;
 `
 
-export const SHeader = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
+export const Title1 = styled.h1`
+  width: 100%;
+  font-size: 48px;
+  color: #00085e;
+  font-family: "Al Tarikh", serif;
+`
+
+export const TimerSection = styled.section`
+  max-width: 500px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  //text-align: center;
+  margin: 0 auto;
+  justify-content: space-around;
 `
-
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`
-
-export const SLogo = styled.img`
-  height: 40vmin;
-  pointer-events: none;
-
-  @media (prefers-reduced-motion: no-preference) {
-    animation: ${spin} infinite 20s linear;
-  }
-`
-
-export const SLink = styled.a`
-  color: #61dafb;
-`
-
 
 export const TimerParts = styled.div`
-  max-width: 50px;
+  width: 50px;
   padding: 2rem;
-  background: #0b9d9d;
+  background: #080062;
   color: white;
   border-radius: 15px;
 `
 
 export const TimerDivider = styled.span`
   font-size: 32px;
-  margin: 1rem auto;
+  margin: 1rem;
   color: blue;
+`
+
+export const TimerFooter = styled.footer`
+  display: flex;
+  max-width: 300px;
+  margin: 1rem auto;
+  justify-content: space-around;
+`
+
+export const CoundownInput = styled.input`
+  min-width: 100px;
+  background: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid gray;
+  padding: 5px;
+  
+  font-size: 14px;
+  line-height: 12px;
+  
+  :focus {
+    border-bottom: 1px solid blue;
+  }
+  :active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+  }
 `
