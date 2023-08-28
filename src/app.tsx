@@ -10,7 +10,8 @@ function App() {
         <MainLayout>
             <TimerTitle title="Timer" />
             <TimerPage />
-            {/*<CountdownPage />*/}
+            <TimerTitle title="Countdown" />
+            <CountdownPage />
             {/*<P/>*/}
         </MainLayout>
     );
