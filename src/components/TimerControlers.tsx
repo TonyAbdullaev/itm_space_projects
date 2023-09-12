@@ -1,11 +1,11 @@
-import React from 'react';
 import {Button} from "@mui/material";
 import {TimerFooter} from "../assets/styles/app.styles";
+import {memo} from "react";
 
 type TimerControllersProto = {
-    start: any,
-    pause: any,
-    reset: any,
+    start: () => void,
+    pause: () => void,
+    reset: () => void,
     status: number,
 }
 
@@ -28,4 +28,4 @@ const TimerControllers = ({start, pause, reset, status}: TimerControllersProto) 
     );
 };
 
-export default TimerControllers;
+export default memo(TimerControllers);

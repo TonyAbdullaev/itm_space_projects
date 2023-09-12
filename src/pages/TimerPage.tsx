@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Timer from "../components/Timer";
 import TimerControllers from "../components/TimerControlers";
-import TimerTitle from "../components/TimerTitle";
+import {defaultTime} from "../constants/constants";
 
 const TimerPage = () => {
-    const defaultTime = {ms: 0, s: 0, m:0, h: 0}
     const [time, setTime] = useState(defaultTime);
     const [interv, setInterv] = useState(0)
     const [status, setStatus] = useState(0)

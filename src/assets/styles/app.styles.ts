@@ -49,6 +49,7 @@ export const CoundownInput = styled.input`
   border-color: transparent;
   border-bottom: 1px solid gray;
   padding: 5px;
+  margin-left: 10px;
   
   font-size: 14px;
   line-height: 12px;
@@ -61,3 +62,7 @@ export const CoundownInput = styled.input`
     outline-offset: 0;
   }
 `
+
+export const CoundownInputLabel = styled.label`
+  color: gray;
+`;
