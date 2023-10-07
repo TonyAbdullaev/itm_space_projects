@@ -2,15 +2,18 @@ import React from 'react';
 import TimerPage from "./pages/TimerPage";
 import {MainLayout} from "./assets/styles/app.styles";
 import CountdownPage from "./pages/CountdownPage";
-import TimerTitle from "./components/TimerTitle";
+import CTitle from "./components/UI/CTitle";
+// import TimerUi from "./components/Timer/TimerUI";
+
 
 function App() {
     return (
         <MainLayout>
-            <TimerTitle title="Timer" />
+            <CTitle title="Timer" />
             <TimerPage />
-            <TimerTitle title="Countdown" />
+            <CTitle title="Countdown" />
             <CountdownPage />
+            {/*<TimerUi />*/}
         </MainLayout>
     );
 }

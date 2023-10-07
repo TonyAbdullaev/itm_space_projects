@@ -4,14 +4,10 @@ export const maxSecond: number = 59;
 export const minMinute: number = 0;
 export const minSecond: number = 0;
 
+export const HourInMS = 3600000;
+export const MinuteInMS = 60000;
+export const SecondInMS = 1000;
+
 // style
 export const style = { width: '50%', margin: "0 5px" };
 
-// default time
-export interface IDefaultTime {
-    h: number,
-    m: number,
-    s: number,
-    ms: number,
-}
-export const defaultTime: IDefaultTime = {ms: 0, s: 0, m:0, h: 0}

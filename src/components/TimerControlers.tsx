@@ -1,29 +1,32 @@
-import {Button} from "@mui/material";
+import {Button, Divider, Stack} from "@mui/material";
 import {TimerFooter} from "../assets/styles/app.styles";
-import {memo} from "react";
+import {FC, memo} from "react";
+import {TimerControllersProto} from "../models/ICommon";
 
-type TimerControllersProto = {
-    start: () => void,
-    pause: () => void,
-    reset: () => void,
-    status: number,
-}
 
-const TimerControllers = ({start, pause, reset, status}: TimerControllersProto) => {
+
+const TimerControllers: FC<TimerControllersProto> = ({interv, start, pause, reset}) => {
     return (
         <TimerFooter>
-            {status === 1 ? (
-                <Button variant='contained' color="secondary" onClick={pause}>
-                    Pause
+            <Stack
+                direction="row"
+                divider={<Divider orientation="vertical" flexItem />}
+                spacing={2}
+            >
+                {
+                    interv !== 0 ?
+                         <Button variant='contained' color="secondary" onClick={pause}>
+                             Pause
+                         </Button>
+                         :
+                         <Button variant='contained' onClick={start}>
+                             Start
+                         </Button>
+                }
+                <Button variant='contained' color="error" onClick={reset}>
+                    Reset
                 </Button>
-            ) : (
-                <Button variant='contained' onClick={start}>
-                    {status === 2 ? 'Restart' : 'Start'}
-                </Button>
-            )}
-            <Button variant='contained' color="error" onClick={reset}>
-                Reset
-            </Button>
+            </Stack>
         </TimerFooter>
     );
 };
